@@ -5,7 +5,10 @@ package itermap
 // otherwise return 0, false
 func IndexOf(slice []interface{}, sub interface{}) (int, bool) {
 	// Find s in a, r
-	n := len(slice)
+	n := len(slice) - 1
+	if n == -1 {
+		return 0, false
+	}
 	for i, v := range slice {
 		switch {
 		case v == sub:
